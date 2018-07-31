@@ -5,6 +5,7 @@ import person.consciousness.Knowledge;
 public class Student {
     //name of student
     private String name;
+
     //knowledge of student
     private Knowledge Know;
     //construct student
@@ -17,6 +18,11 @@ public class Student {
     public String getName() {
         return name;
     }
+
+    public Knowledge getKnow() {
+        return Know;
+    }
+
     //setters
     public void setName(String name) {
         this.name = name;
