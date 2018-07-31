@@ -25,7 +25,7 @@ public class University {
         if(-1!=this.students.indexOf(student))
         {
             int randomNum = ThreadLocalRandom.current().nextInt(0, 100 + 1);
-            this.students.get(this.students.indexOf(student)).Know.level=randomNum;
+            this.students.get(this.students.indexOf(student)).getKnow().setLevel(randomNum);
             this.calcAverageKnowledge();
         }
     }
