@@ -9,7 +9,7 @@ public class University {
     //name of University
     private String name;
     //average knowledge of all students
-    private int averageKnow;
+    private double averageKnow;
     //vector of all students
     private Vector<Student> students;
 
