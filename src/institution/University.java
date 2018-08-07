@@ -1,9 +1,14 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package institution;
-
-import person.Student;
 
 import java.util.Vector;
 import java.util.concurrent.ThreadLocalRandom;
+
+import person.Student;
 
 public class University {
     //name of University
@@ -15,42 +20,41 @@ public class University {
 
     public University(String name) {
         this.name = name;
-        this.students=new Vector<Student>();
-        this.averageKnow=0;
+        this.students = new Vector<Student>();
+        this.averageKnow = 0;
     }
 
     //sets marks to students
     public void setStudent(Student student) {
         //if student exists in University set him random mark
-        if(-1!=this.students.indexOf(student))
-        {
+        if (-1 != this.students.indexOf(student)) {
             int randomNum = ThreadLocalRandom.current().nextInt(0, 100 + 1);
             this.students.get(this.students.indexOf(student)).getKnow().setLevel(randomNum);
             this.calcAverageKnowledge();
         }
     }
+
     //calculate average knowledge of all students
     private void calcAverageKnowledge() {
-        double tmp =0;
-        for(int i=0; i<this.students.size();i++)
-        {
-            tmp+=this.students.get(i).getKnow().getLevel();
+        double tmp = 0;
+        for (int i = 0; i < this.students.size(); i++) {
+            tmp += this.students.get(i).getKnow().getLevel();
         }
-        this.averageKnow=tmp/this.students.size();
+        this.averageKnow = tmp / this.students.size();
     }
+
     //add student to the university
     public void addStudent(Student student) {
         //if student not exists in University add him
-        if(-1==this.students.indexOf(student))
+        if (-1 == this.students.indexOf(student))
             this.students.addElement(student);
     }
 
     //return vector of students who are ready to go to the internship
-    public Vector<Student> goToInternship(){
+    public Vector<Student> goToInternship() {
         Vector<Student> res = new Vector<Student>();
-        for(int i=0; i<this.students.size();i++)
-        {
-            if(this.students.get(i).getKnow().getLevel()>this.averageKnow)
+        for (int i = 0; i < this.students.size(); i++) {
+            if (this.students.get(i).getKnow().getLevel() > this.averageKnow)
                 res.add(this.students.get(i));
         }
         return res;

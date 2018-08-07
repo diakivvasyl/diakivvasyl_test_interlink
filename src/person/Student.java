@@ -8,10 +8,11 @@ public class Student {
 
     //knowledge of student
     private Knowledge Know;
+
     //construct student
     public Student(String name) {
-        this.name=name;
-        this.Know=new Knowledge(0);
+        this.name = name;
+        this.Know = new Knowledge(0);
     }
 
     //getters
