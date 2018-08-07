@@ -26,6 +26,7 @@ public class Application {
             university.setStudent(st);
 
         Internship internship = new Internship("Interlink");
+
         //add students with hight knowledge to intership
         for (Student person : university.goToInternship())
             internship.setStudent(person);
