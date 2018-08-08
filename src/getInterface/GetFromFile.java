@@ -10,7 +10,7 @@ import java.util.Vector;
 import person.Student;
 
 
-public class GetFromFile {
+public class GetFromFile implements GetSudentInterface {
     private Vector<Student> data;
 
     public Vector<Student> getStudents() {
